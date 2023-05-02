@@ -1,0 +1,25 @@
+---
+import blogData from "../data/blog-data";
+---
+
+<section class="px-12">
+  <div class="wrapper">
+    <ul class=" my-12 flex flex-wrap gap-x-7 gap-y-8">
+      {
+        blogData.map((data) => (
+          <li class="basis-[31.2%] shadow-lg shadow-gray-300 md:hover:brightness-50 md:transition-all md:duration-[.3s] rounded-md overflow-hidden">
+            <a class="group" href={data.path} title={data.AuthorName}>
+              <figure class="w-full h-64">
+                <img src={data.image} class="w-full h-full object-cover" alt="blog image">
+              </figure>
+              <div class="card-body p-4">              
+                <h2 class="font-bold text-xl capitalize pb-2 md:group-hover:text-red-500 transition-all duration-[0.2s]">{data.AuthorName}</h2>
+                <p class="text-sm line-clamp-3">{data.description}</p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
